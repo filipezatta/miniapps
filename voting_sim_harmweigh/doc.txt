@@ -1,0 +1,33 @@
+
+create two classes in python, voter and candidate
+
+voter should have 3 properties, region, mvcoValue and position
+
+candidate should have 3 properties, name, popularity, and position
+
+create a funcition called election, where:
+
+ 3 candidates are created, names being A, B, C; position integer 3,2, 1; popularity being a number between 100 and 1.
+
+a votes dict is created as the example below:
+
+votes = {
+    "A": {"North": [0, 0, 0], "South": [0, 0, 0], "East": [0, 0, 0], "West": [0, 0, 0], "Center": [0, 0, 0]},
+    "B": {"North": [0, 0, 0], "South": [0, 0, 0], "East": [0, 0, 0], "West": [0, 0, 0], "Center": [0, 0, 0]},
+    "C": {"North": [0, 0, 0], "South": [0, 0, 0], "East": [0, 0, 0], "West": [0, 0, 0], "Center": [0, 0, 0]}
+}
+
+#each array represents the following: [primary option votes, second option votes, third option votes]
+
+theres a loop where:
+
+a voter is instantiated, having a region value of north, east, center, west or south; mvcoValue of an int beween 100 and 1; a position integer between 3 and 1.
+
+each voter can vote once on a primary option, once on a second option and once on a third option. their vote being stored on the votes dict region array of the candidate where the vote was cast.
+
+while casting, the voter has <mvcoValue> chance of voting on the candidate with higher popularity available and the rest of the time he votes on the candidate with the same position as him.
+
+
+after all votes are casted: primary option votes for all regions should be summed, second option votes for all regions should be summed, third option votes for all regions should be summed and then:
+
+the array containing the values for total primary option votes, second option votes, third option votes should calculated using a weighted harmonic mean where the primary votes have more weight, second votes less, and third votes even less per candidate
